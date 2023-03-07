@@ -24,7 +24,7 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.warning), label: "ALERTS"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.graphic_eq_outlined), label: "WIRES"),
+              icon: Icon(Icons.graphic_eq_outlined), label: "STATS"),
         ],
         currentIndex: index,
         onTap: (int i) {
