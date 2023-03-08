@@ -57,55 +57,196 @@ class _DashboardState extends State<Dashboard> {
         child: SingleChildScrollView(
           child: Column(children: <Widget>[
             Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              height: MediaQuery.of(context).size.height * 0.11,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.all(5),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 237, 61, 216),
-                        borderRadius: BorderRadius.circular(7)),
-                    height: MediaQuery.of(context).size.height * 0.13,
-                    width: MediaQuery.of(context).size.width * 0.45,
-                    child: const GridTile(
-                      header: Text(
-                        'Current Fed Balance',
-                        style: TextStyle(fontSize: 15, color: Colors.white),
-                        textAlign: TextAlign.center,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          '\$ 74.5 B',
-                          style: TextStyle(fontSize: 44, color: Colors.white),
+                        border: Border.all(color: Colors.white),
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10))),
+                    child: Column(
+                      children: const <Widget>[
+                        Text(
+                          'Wires ICE US',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
-                      ),
+                        Text(
+                          '9:30 AM ET',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Completed',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        )
+                      ],
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(5),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 75, 185, 236),
-                        borderRadius: BorderRadius.circular(7)),
-                    height: MediaQuery.of(context).size.height * 0.13,
-                    width: MediaQuery.of(context).size.width * 0.45,
-                    child: const GridTile(
-                      header: Text(
-                        'Current CHIPS Balance',
-                        style: TextStyle(fontSize: 15, color: Colors.white),
-                        textAlign: TextAlign.center,
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          '\$ 6.34 B',
-                          style: TextStyle(fontSize: 44, color: Colors.white),
+                        border: Border.all(color: Colors.white),
+                        color: Color.fromARGB(255, 47, 48, 46)),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          'ACH NOU 1',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
+                        Text(
+                          '9:30 AM ET',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                          // width: MediaQuery.of(context).size.width * 0.15,
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                  color: Colors.white,
+                                  IconData(0xee2d,
+                                      fontFamily: 'MaterialIcons')),
+                              Text('2min',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration:
+                        BoxDecoration(border: Border.all(color: Colors.white)),
+                    child: Column(
+                      children: const <Widget>[
+                        Text(
+                          'Wires ICE US',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                        Text(
+                          '9:30 AM ET',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Completed',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 47, 48, 46),
+                        border: Border.all(color: Colors.white),
+                        borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10))),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          'Wires ICE US',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                        Text(
+                          '10:30 AM ET',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                          // width: MediaQuery.of(context).size.width * 0.15,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 205, 188, 38),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                  color: Colors.white,
+                                  IconData(0xee2d,
+                                      fontFamily: 'MaterialIcons')),
+                              Text('2min',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.015),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 237, 61, 216),
+                      borderRadius: BorderRadius.circular(7)),
+                  height: MediaQuery.of(context).size.height * 0.13,
+                  width: MediaQuery.of(context).size.width * 0.45,
+                  child: const GridTile(
+                    header: Text(
+                      'Current Fed Balance',
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '\$ 74.5 B',
+                        style: TextStyle(fontSize: 44, color: Colors.white),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 75, 185, 236),
+                      borderRadius: BorderRadius.circular(7)),
+                  height: MediaQuery.of(context).size.height * 0.13,
+                  width: MediaQuery.of(context).size.width * 0.45,
+                  child: const GridTile(
+                    header: Text(
+                      'Current CHIPS Balance',
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '\$ 6.34 B',
+                        style: TextStyle(fontSize: 44, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
