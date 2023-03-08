@@ -319,7 +319,7 @@ class _DashboardState extends State<Dashboard> {
               ),
               child: ExpansionTile(
                 leading: const Icon(
-                  Icons.arrow_drop_down_circle_outlined,
+                  Icons.arrow_drop_down,
                   color: Colors.white,
                 ),
                 trailing: const SizedBox(),
