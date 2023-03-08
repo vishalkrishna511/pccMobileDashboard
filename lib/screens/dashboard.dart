@@ -164,7 +164,7 @@ class _DashboardState extends State<Dashboard> {
                       children: <Widget>[
                         Text(
                           'Wires ICE US',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                          style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                         Text(
                           '10:30 AM ET',
@@ -188,7 +188,7 @@ class _DashboardState extends State<Dashboard> {
                                       fontFamily: 'MaterialIcons')),
                               Text('2min',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 16))
+                                      color: Colors.white, fontSize: 14))
                             ],
                           ),
                         ),
@@ -307,16 +307,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color.fromARGB(255, 78, 72, 72),
-                    Color.fromARGB(255, 47, 48, 46),
-                    // Color.fromARGB(235, 65, 65, 58),
-                  ],
-                ),
-              ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color.fromARGB(255, 78, 72, 72),
+                      Color.fromARGB(255, 47, 48, 46),
+                      // Color.fromARGB(235, 65, 65, 58),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
               child: ExpansionTile(
                 leading: const Icon(
                   Icons.arrow_drop_down,
@@ -430,16 +430,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color.fromARGB(255, 78, 72, 72),
-                    Color.fromARGB(255, 47, 48, 46),
-                    // Color.fromARGB(235, 65, 65, 58),
-                  ],
-                ),
-              ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color.fromARGB(255, 78, 72, 72),
+                      Color.fromARGB(255, 47, 48, 46),
+                      // Color.fromARGB(235, 65, 65, 58),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
               child: ExpansionTile(
                 leading: const Icon(
                   Icons.arrow_drop_down,
@@ -471,16 +471,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color.fromARGB(255, 78, 72, 72),
-                    Color.fromARGB(255, 47, 48, 46),
-                    // Color.fromARGB(235, 65, 65, 58),
-                  ],
-                ),
-              ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color.fromARGB(255, 78, 72, 72),
+                      Color.fromARGB(255, 47, 48, 46),
+                      // Color.fromARGB(235, 65, 65, 58),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
               child: ExpansionTile(
                 leading: const Icon(
                   Icons.arrow_drop_down,
@@ -512,16 +512,16 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color.fromARGB(255, 78, 72, 72),
-                    Color.fromARGB(255, 47, 48, 46),
-                    // Color.fromARGB(235, 65, 65, 58),
-                  ],
-                ),
-              ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color.fromARGB(255, 78, 72, 72),
+                      Color.fromARGB(255, 47, 48, 46),
+                      // Color.fromARGB(235, 65, 65, 58),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
               child: ExpansionTile(
                 leading: const Icon(
                   Icons.arrow_drop_down,
