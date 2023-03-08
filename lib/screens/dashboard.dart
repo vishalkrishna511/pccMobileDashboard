@@ -30,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.settings),
+            child: Icon(Icons.access_alarms),
           ),
           Padding(
             padding: EdgeInsets.only(right: 8.0),
@@ -319,7 +319,7 @@ class _DashboardState extends State<Dashboard> {
               ),
               child: ExpansionTile(
                 leading: const Icon(
-                  Icons.arrow_drop_down,
+                  Icons.arrow_drop_down_circle_outlined,
                   color: Colors.white,
                 ),
                 trailing: const SizedBox(),
@@ -559,7 +559,7 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.warning), label: "ALERTS"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.graphic_eq_outlined), label: "WIRES"),
+              icon: Icon(Icons.graphic_eq_outlined), label: "STATS"),
         ],
         currentIndex: index,
         onTap: (int index) {
