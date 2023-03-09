@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pccmobile/screens/dashboard.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pccmobile/screens/splashPage.dart';
 import 'package:pccmobile/screens/wiresDashboard.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,11 @@ class MyApp extends StatelessWidget {
           textTheme:
               GoogleFonts.sourceSansProTextTheme(Theme.of(context).textTheme)),
       debugShowCheckedModeBanner: false,
-      home: const Dashboard(),
+      home: const SplashPage(),
+      routes: {
+        Dashboard.routeName: (context) => const Dashboard(),
+        WiresDashboard.routeName: (context) => const WiresDashboard()
+      },
     );
   }
 }

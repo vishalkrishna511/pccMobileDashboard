@@ -4,6 +4,7 @@ import 'package:pccmobile/screens/dashboard.dart';
 import 'package:semicircle_indicator/semicircle_indicator.dart';
 
 class WiresDashboard extends StatefulWidget {
+  static const routeName = '/wires-dashboard';
   const WiresDashboard({super.key});
 
   @override
@@ -858,12 +859,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
         onTap: (int index) {
           switch (index) {
             case 0:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => const Dashboard(),
-                ),
-              );
+              Navigator.of(context).pushNamed(Dashboard.routeName);
               break;
           }
         },

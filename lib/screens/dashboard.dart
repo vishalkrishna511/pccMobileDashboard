@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pccmobile/screens/wiresDashboard.dart';
 
 class Dashboard extends StatefulWidget {
+  static const routeName = '/dashboard';
   const Dashboard({super.key});
 
   @override
@@ -565,12 +566,7 @@ class _DashboardState extends State<Dashboard> {
         onTap: (int index) {
           switch (index) {
             case 2:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => const WiresDashboard(),
-                ),
-              );
+              Navigator.of(context).pushNamed(WiresDashboard.routeName);
               break;
           }
         },
