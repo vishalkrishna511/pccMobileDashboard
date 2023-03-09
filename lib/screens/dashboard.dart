@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pccmobile/screens/wiresDashboard.dart';
 
 class Dashboard extends StatefulWidget {
+  static const routeName = '/dashboard';
   const Dashboard({super.key});
 
   @override
@@ -348,10 +349,12 @@ class _DashboardState extends State<Dashboard> {
                                       right: Radius.circular(50))),
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: const ListTile(
-                                leading: Icon(IconData(0xf655,
-                                    fontFamily: CupertinoIcons.iconFont,
-                                    fontPackage:
-                                        CupertinoIcons.iconFontPackage)),
+                                leading: Icon(
+                                    color: Colors.white,
+                                    IconData(0xf659,
+                                        fontFamily: CupertinoIcons.iconFont,
+                                        fontPackage:
+                                            CupertinoIcons.iconFontPackage)),
                                 title: Text(
                                   'EMTS',
                                   style: TextStyle(color: Colors.white),
@@ -367,7 +370,7 @@ class _DashboardState extends State<Dashboard> {
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: const ListTile(
                                 leading: Icon(
-                                  IconData(0xe156, fontFamily: 'MaterialIcons'),
+                                  IconData(0xe159, fontFamily: 'MaterialIcons'),
                                   color: Colors.white,
                                 ),
                                 title: Text(
@@ -392,7 +395,7 @@ class _DashboardState extends State<Dashboard> {
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: const ListTile(
                                 leading: Icon(
-                                  IconData(0xe156, fontFamily: 'MaterialIcons'),
+                                  IconData(0xe159, fontFamily: 'MaterialIcons'),
                                   color: Colors.white,
                                 ),
                                 title: Text(
@@ -410,7 +413,7 @@ class _DashboardState extends State<Dashboard> {
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: const ListTile(
                                 leading: Icon(
-                                  IconData(0xe156, fontFamily: 'MaterialIcons'),
+                                  IconData(0xe159, fontFamily: 'MaterialIcons'),
                                   color: Colors.white,
                                 ),
                                 title: Text(
@@ -567,12 +570,7 @@ class _DashboardState extends State<Dashboard> {
         onTap: (int index) {
           switch (index) {
             case 2:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => const WiresDashboard(),
-                ),
-              );
+              Navigator.of(context).pushNamed(WiresDashboard.routeName);
               break;
           }
         },
