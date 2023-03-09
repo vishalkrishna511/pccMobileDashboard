@@ -22,9 +22,11 @@ class _DashboardState extends State<Dashboard> {
             Spacer(),
           ],
         ),
-        title: const Center(
+        title: Center(
           child: Text(
             'BANK OVERVIEW',
+            style: GoogleFonts.albertSans(
+                fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
         actions: const [
@@ -37,11 +39,11 @@ class _DashboardState extends State<Dashboard> {
             child: Icon(Icons.notification_important),
           )
         ],
-        backgroundColor: Color.fromRGBO(65, 65, 58, 0.922),
+        backgroundColor: const Color.fromRGBO(65, 65, 58, 0.922),
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -62,7 +64,7 @@ class _DashboardState extends State<Dashboard> {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.white),
                         borderRadius: const BorderRadius.only(
@@ -89,17 +91,17 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.white),
-                        color: Color.fromARGB(255, 47, 48, 46)),
+                        color: const Color.fromARGB(255, 47, 48, 46)),
                     child: Column(
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'ACH NOU 1',
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
-                        Text(
+                        const Text(
                           '9:30 AM ET',
                           style: TextStyle(
                               color: Colors.white,
@@ -107,14 +109,14 @@ class _DashboardState extends State<Dashboard> {
                               fontWeight: FontWeight.bold),
                         ),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 1),
                           // width: MediaQuery.of(context).size.width * 0.15,
                           decoration: BoxDecoration(
                               color: Colors.red,
                               borderRadius: BorderRadius.circular(10)),
                           child: Row(
-                            children: <Widget>[
+                            children: const <Widget>[
                               Icon(
                                   color: Colors.white,
                                   IconData(0xee2d,
@@ -129,7 +131,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration:
                         BoxDecoration(border: Border.all(color: Colors.white)),
                     child: Column(
@@ -153,20 +155,20 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 47, 48, 46),
+                        color: const Color.fromARGB(255, 47, 48, 46),
                         border: Border.all(color: Colors.white),
                         borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(10),
                             bottomRight: Radius.circular(10))),
                     child: Column(
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'Wires ICE US',
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
-                        Text(
+                        const Text(
                           '10:30 AM ET',
                           style: TextStyle(
                               color: Colors.white,
@@ -174,14 +176,14 @@ class _DashboardState extends State<Dashboard> {
                               fontWeight: FontWeight.bold),
                         ),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 1),
                           // width: MediaQuery.of(context).size.width * 0.15,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 205, 188, 38),
+                              color: const Color.fromARGB(255, 205, 188, 38),
                               borderRadius: BorderRadius.circular(10)),
                           child: Row(
-                            children: <Widget>[
+                            children: const <Widget>[
                               Icon(
                                   color: Colors.white,
                                   IconData(0xee2d,
@@ -332,7 +334,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: Column(
                       children: <Widget>[
                         Row(
@@ -460,7 +462,7 @@ class _DashboardState extends State<Dashboard> {
                     margin: const EdgeInsets.all(5),
                     child: ListView(
                       physics: const NeverScrollableScrollPhysics(),
-                      children: [],
+                      children: const [],
                     ),
                   ),
                 ],
@@ -501,7 +503,7 @@ class _DashboardState extends State<Dashboard> {
                     margin: const EdgeInsets.all(5),
                     child: ListView(
                       physics: const NeverScrollableScrollPhysics(),
-                      children: [],
+                      children: const [],
                     ),
                   ),
                 ],
@@ -542,7 +544,7 @@ class _DashboardState extends State<Dashboard> {
                     margin: const EdgeInsets.all(5),
                     child: ListView(
                       physics: const NeverScrollableScrollPhysics(),
-                      children: [],
+                      children: const [],
                     ),
                   ),
                 ],
@@ -556,10 +558,10 @@ class _DashboardState extends State<Dashboard> {
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.white,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
           BottomNavigationBarItem(icon: Icon(Icons.warning), label: "ALERTS"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.graphic_eq_outlined), label: "STATS"),
+              icon: Icon(Icons.graphic_eq_outlined), label: "WIRES"),
         ],
         currentIndex: index,
         onTap: (int index) {
