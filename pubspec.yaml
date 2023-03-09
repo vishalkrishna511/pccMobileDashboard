@@ -41,6 +41,7 @@ dependencies:
   firebase_core: ^2.5.0
   firebase_auth: ^4.2.6
   firebase_messaging: ^14.2.5
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
     - assets/1.jpg
     - assets/one.jpg
     - assets/render.gif
+    - assets/filter.png
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

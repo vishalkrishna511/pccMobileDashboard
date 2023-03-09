@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pccmobile/screens/EMTSdashboard.dart';
 import 'package:pccmobile/screens/dashboard.dart';
 import 'package:semicircle_indicator/semicircle_indicator.dart';
 
@@ -17,8 +18,8 @@ class _WiresDashboardState extends State<WiresDashboard> {
     var index = 2;
     int current = 0;
     List<Color> listColors = [
-      Color.fromARGB(255, 255, 92, 176),
-      Color.fromARGB(255, 3, 71, 173),
+      const Color.fromARGB(255, 255, 92, 176),
+      const Color.fromARGB(255, 3, 71, 173),
     ];
     List<String> textInfo = ['Transaction Amount', 'Total Transactions'];
     List<String> numInfo = ["\$74.5B", '13,234'];
@@ -29,7 +30,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
             InkWell(
               child: Row(
                 children: [
-                  Icon(Icons.arrow_left_rounded),
+                  const Icon(Icons.arrow_left_rounded),
                   Text(
                     'Back',
                     style: GoogleFonts.albertSans(fontSize: 14),
@@ -46,9 +47,11 @@ class _WiresDashboardState extends State<WiresDashboard> {
             const Spacer(),
           ],
         ),
-        title: const Center(
+        title: Center(
           child: Text(
             'WIRES DASHBOARD',
+            style: GoogleFonts.albertSans(
+                fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
         actions: const [
@@ -61,11 +64,11 @@ class _WiresDashboardState extends State<WiresDashboard> {
             child: Icon(Icons.notification_important),
           )
         ],
-        backgroundColor: Color.fromRGBO(65, 65, 58, 0.922),
+        backgroundColor: const Color.fromRGBO(65, 65, 58, 0.922),
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -139,21 +142,22 @@ class _WiresDashboardState extends State<WiresDashboard> {
                 child: Column(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[
-                            Color.fromARGB(255, 78, 72, 72),
-                            Color.fromARGB(255, 47, 48, 46),
-                            // Color.fromARGB(235, 65, 65, 58),
-                          ],
-                        ),
-                      ),
+                      decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[
+                              Color.fromARGB(255, 78, 72, 72),
+                              Color.fromARGB(255, 47, 48, 46),
+                              // Color.fromARGB(235, 65, 65, 58),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
                       child: ExpansionTile(
+                        initiallyExpanded: true,
                         trailing: const Icon(Icons.arrow_right),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18),
+                          borderRadius: BorderRadius.circular(36),
                         ),
                         title: Center(
                           child: Row(
@@ -183,7 +187,8 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                   width:
                                       MediaQuery.of(context).size.width * 0.8,
                                   child: ListView.builder(
-                                      physics: const BouncingScrollPhysics(),
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
                                       itemCount: 1,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (ctx, index) {
@@ -208,138 +213,143 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                                   padding:
                                                       const EdgeInsets.only(
                                                           left: 8.0),
-                                                  child: Container(
-                                                    // color: Colors.red,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                                .size
-                                                                .width *
-                                                            0.99,
-
-                                                    child: Row(
-                                                      // mainAxisAlignment:
-                                                      //     MainAxisAlignment
-                                                      //         .spaceEvenly,
-                                                      children: [
-                                                        SemicircularIndicator(
-                                                          radius: 90,
-                                                          color: Colors.red,
-                                                          backgroundColor:
-                                                              const Color
-                                                                      .fromARGB(
-                                                                  255,
-                                                                  115,
-                                                                  101,
-                                                                  101),
-                                                          bottomPadding: 0,
-                                                          child: Text(
-                                                            '\$32M',
-                                                            style: GoogleFonts
-                                                                .albertSans(
-                                                                    fontSize:
-                                                                        44,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    color: Colors
-                                                                        .white),
+                                                  child: InkWell(
+                                                    onTap: () => Navigator
+                                                        .pushReplacement(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (BuildContext
+                                                                context) =>
+                                                            const EMTSDashboard(),
+                                                      ),
+                                                    ),
+                                                    child: Container(
+                                                      // color: Colors.red,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.99,
+                                                      child: Row(
+                                                        // mainAxisAlignment:
+                                                        //     MainAxisAlignment
+                                                        //         .spaceEvenly,
+                                                        children: [
+                                                          SemicircularIndicator(
+                                                            radius: 90,
+                                                            color: Colors.red,
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    115,
+                                                                    101,
+                                                                    101),
+                                                            bottomPadding: 0,
+                                                            child: Text(
+                                                              '\$32M',
+                                                              style: GoogleFonts.albertSans(
+                                                                  fontSize: 44,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  color: Colors
+                                                                      .white),
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                      .only(
-                                                                  left: 8.0),
-                                                          child: Align(
-                                                            alignment: Alignment
-                                                                .centerRight,
-                                                            child: Container(
-                                                              height: MediaQuery.of(
-                                                                          context)
-                                                                      .size
-                                                                      .height *
-                                                                  0.15,
-                                                              width: MediaQuery.of(
-                                                                          context)
-                                                                      .size
-                                                                      .width *
-                                                                  0.3,
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                            .only(
-                                                                        left:
-                                                                            8.0),
-                                                                child: Column(
-                                                                  children: [
-                                                                    Row(
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              10,
-                                                                          height:
-                                                                              10,
-                                                                          decoration: BoxDecoration(
-                                                                              borderRadius: BorderRadius.circular(10),
-                                                                              color: Colors.red),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.only(left: 0.5),
-                                                                          child:
-                                                                              Column(
-                                                                            children: [
-                                                                              Text(
-                                                                                '\$22,000,000',
-                                                                                style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
-                                                                              ),
-                                                                              Text(
-                                                                                'Completed',
-                                                                                style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
-                                                                              ),
-                                                                            ],
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                        .only(
+                                                                    left: 8.0),
+                                                            child: Align(
+                                                              alignment: Alignment
+                                                                  .centerRight,
+                                                              child: Container(
+                                                                height: MediaQuery.of(
+                                                                            context)
+                                                                        .size
+                                                                        .height *
+                                                                    0.15,
+                                                                width: MediaQuery.of(
+                                                                            context)
+                                                                        .size
+                                                                        .width *
+                                                                    0.3,
+                                                                child: Padding(
+                                                                  padding: const EdgeInsets
+                                                                          .only(
+                                                                      left:
+                                                                          8.0),
+                                                                  child: Column(
+                                                                    children: [
+                                                                      Row(
+                                                                        children: [
+                                                                          Container(
+                                                                            width:
+                                                                                10,
+                                                                            height:
+                                                                                10,
+                                                                            decoration:
+                                                                                BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.red),
                                                                           ),
-                                                                        )
-                                                                      ],
-                                                                    ),
-                                                                    const Spacer(),
-                                                                    Row(
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              10,
-                                                                          height:
-                                                                              10,
-                                                                          decoration: BoxDecoration(
-                                                                              borderRadius: BorderRadius.circular(10),
-                                                                              color: Color.fromARGB(255, 115, 101, 101)),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.only(left: 0.5),
-                                                                          child:
-                                                                              Column(
-                                                                            children: [
-                                                                              Text(
-                                                                                '\$10,000,000',
-                                                                                style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
-                                                                              ),
-                                                                              Text(
-                                                                                'In Progress',
-                                                                                style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
-                                                                              ),
-                                                                            ],
+                                                                          Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(left: 0.5),
+                                                                            child:
+                                                                                Column(
+                                                                              children: [
+                                                                                Text(
+                                                                                  '\$22,000,000',
+                                                                                  style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                                                                                ),
+                                                                                Text(
+                                                                                  'Completed',
+                                                                                  style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          )
+                                                                        ],
+                                                                      ),
+                                                                      const Spacer(),
+                                                                      Row(
+                                                                        children: [
+                                                                          Container(
+                                                                            width:
+                                                                                10,
+                                                                            height:
+                                                                                10,
+                                                                            decoration:
+                                                                                BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 115, 101, 101)),
                                                                           ),
-                                                                        )
-                                                                      ],
-                                                                    ),
-                                                                  ],
+                                                                          Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.only(left: 0.5),
+                                                                            child:
+                                                                                Column(
+                                                                              children: [
+                                                                                Text(
+                                                                                  '\$10,000,000',
+                                                                                  style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+                                                                                ),
+                                                                                Text(
+                                                                                  'In Progress',
+                                                                                  style: GoogleFonts.albertSans(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          )
+                                                                        ],
+                                                                      ),
+                                                                    ],
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -359,18 +369,19 @@ class _WiresDashboardState extends State<WiresDashboard> {
                       height: MediaQuery.of(context).size.height * 0.015,
                     ),
                     Container(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[
-                            Color.fromARGB(255, 78, 72, 72),
-                            Color.fromARGB(255, 47, 48, 46),
-                            // Color.fromARGB(235, 65, 65, 58),
-                          ],
-                        ),
-                      ),
+                      decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[
+                              Color.fromARGB(255, 78, 72, 72),
+                              Color.fromARGB(255, 47, 48, 46),
+                              // Color.fromARGB(235, 65, 65, 58),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
                       child: ExpansionTile(
+                        initiallyExpanded: true,
                         trailing: const Icon(Icons.arrow_right),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
@@ -398,14 +409,14 @@ class _WiresDashboardState extends State<WiresDashboard> {
                             child: ListView(
                               physics: const NeverScrollableScrollPhysics(),
                               children: [
-                                /// CUSTOM TABBAR
                                 SizedBox(
                                   height:
                                       MediaQuery.of(context).size.height * 0.4,
                                   width:
                                       MediaQuery.of(context).size.width * 0.8,
                                   child: ListView.builder(
-                                      physics: const BouncingScrollPhysics(),
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
                                       itemCount: 1,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (ctx, index) {
@@ -437,7 +448,6 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                                                 .size
                                                                 .width *
                                                             0.99,
-
                                                     child: Row(
                                                       // mainAxisAlignment:
                                                       //     MainAxisAlignment
@@ -445,11 +455,9 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                                       children: [
                                                         SemicircularIndicator(
                                                           radius: 90,
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              237,
-                                                              61,
-                                                              216),
+                                                          color: const Color
+                                                                  .fromARGB(255,
+                                                              237, 61, 216),
                                                           backgroundColor:
                                                               const Color
                                                                       .fromARGB(
@@ -509,7 +517,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                                                               BoxDecoration(
                                                                             borderRadius:
                                                                                 BorderRadius.circular(10),
-                                                                            color: Color.fromARGB(
+                                                                            color: const Color.fromARGB(
                                                                                 255,
                                                                                 237,
                                                                                 61,
@@ -599,18 +607,19 @@ class _WiresDashboardState extends State<WiresDashboard> {
                       height: MediaQuery.of(context).size.height * 0.015,
                     ),
                     Container(
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[
-                            Color.fromARGB(255, 78, 72, 72),
-                            Color.fromARGB(255, 47, 48, 46),
-                            // Color.fromARGB(235, 65, 65, 58),
-                          ],
-                        ),
-                      ),
+                      decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[
+                              Color.fromARGB(255, 78, 72, 72),
+                              Color.fromARGB(255, 47, 48, 46),
+                              // Color.fromARGB(235, 65, 65, 58),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
                       child: ExpansionTile(
+                        initiallyExpanded: true,
                         trailing: const Icon(Icons.arrow_right),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
@@ -645,7 +654,8 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                   width:
                                       MediaQuery.of(context).size.width * 0.8,
                                   child: ListView.builder(
-                                      physics: const BouncingScrollPhysics(),
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
                                       itemCount: 1,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (ctx, index) {
@@ -685,11 +695,9 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                                       children: [
                                                         SemicircularIndicator(
                                                           radius: 90,
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              237,
-                                                              61,
-                                                              216),
+                                                          color: const Color
+                                                                  .fromARGB(255,
+                                                              237, 61, 216),
                                                           backgroundColor:
                                                               const Color
                                                                       .fromARGB(
@@ -749,7 +757,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
                                                                               BoxDecoration(
                                                                             borderRadius:
                                                                                 BorderRadius.circular(10),
-                                                                            color: Color.fromARGB(
+                                                                            color: const Color.fromARGB(
                                                                                 255,
                                                                                 237,
                                                                                 61,
