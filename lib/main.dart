@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pccmobile/screens/dashboard.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pccmobile/screens/wiresDashboard.dart';
 
+import 'package:pccmobile/screens/wiresDashboard.dart';
 
 void main() {
   runApp(const MyApp());

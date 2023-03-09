@@ -161,6 +161,25 @@ class _WiresDashboardState extends State<WiresDashboard> {
                         title: Center(
                           child: Row(
                             children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.red,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '!',
+                                    style: GoogleFonts.albertSans(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
                               Text(
                                 'EMTS Transaction Amount',
                                 style: GoogleFonts.albertSans(
