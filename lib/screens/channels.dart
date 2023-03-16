@@ -530,7 +530,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
           child: ExpansionTile(
             initiallyExpanded: true,
             trailing: const Icon(Icons.arrow_right),
-            leading: const Icon(Icons.graphic_eq_outlined),
+            leading: const Icon(Icons.rectangle_rounded),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18),
             ),

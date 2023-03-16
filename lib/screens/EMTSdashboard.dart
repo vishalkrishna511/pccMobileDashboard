@@ -72,9 +72,6 @@ class _EMTSDashboardState extends State<EMTSDashboard> {
               indicatorSize: TabBarIndicatorSize.label,
               tabs: [
                 Tab(
-                  text: 'Line of Business',
-                ),
-                Tab(
                   text: 'Customers',
                 ),
                 Tab(
@@ -84,22 +81,6 @@ class _EMTSDashboardState extends State<EMTSDashboard> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(10),
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: <Color>[
-                    Color.fromARGB(255, 30, 29, 29),
-                    Color.fromARGB(255, 47, 48, 46),
-                    Color.fromARGB(235, 65, 65, 58),
-                  ],
-                ),
-              ),
-              // child: ,
-            ),
             CustomerScreen(),
             Container(
               padding: const EdgeInsets.all(10),
