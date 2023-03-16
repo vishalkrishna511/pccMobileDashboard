@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pccmobile/screens/EMTSdashboard.dart';
 import 'package:pccmobile/screens/wiresDashboard.dart';
 
 class Dashboard extends StatefulWidget {
@@ -330,6 +331,47 @@ class _DashboardState extends State<Dashboard> {
                   borderRadius: BorderRadius.circular(18),
                 ),
                 title: const Text(
+                  'Pending Transactions',
+                  style: TextStyle(fontSize: 22, color: Colors.white),
+                ),
+                children: <Widget>[
+                  Container(
+                    width: 400,
+                    height: 150,
+                    margin: const EdgeInsets.all(5),
+                    child: ListView(
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: const [],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.015,
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color.fromARGB(255, 78, 72, 72),
+                      Color.fromARGB(255, 47, 48, 46),
+                      // Color.fromARGB(235, 65, 65, 58),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
+              child: ExpansionTile(
+                leading: const Icon(
+                  Icons.arrow_drop_down,
+                  color: Colors.white,
+                ),
+                trailing: const SizedBox(),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                title: const Text(
                   'Payment Rail Health Status',
                   style: TextStyle(fontSize: 22, color: Colors.white),
                 ),
@@ -341,41 +383,56 @@ class _DashboardState extends State<Dashboard> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Container(
-                              decoration: const BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.horizontal(
-                                      left: Radius.circular(50),
-                                      right: Radius.circular(50))),
-                              width: MediaQuery.of(context).size.width * 0.45,
-                              child: const ListTile(
-                                leading: Icon(
-                                    color: Colors.white,
-                                    IconData(0xf659,
-                                        fontFamily: CupertinoIcons.iconFont,
-                                        fontPackage:
-                                            CupertinoIcons.iconFontPackage)),
-                                title: Text(
-                                  'EMTS',
-                                  style: TextStyle(color: Colors.white),
+                            InkWell(
+                              onTap: () => {
+                                Navigator.of(context).pushNamed(
+                                    WiresDashboard.routeName,
+                                    arguments: {'rail': 'EMTS'})
+                              },
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.horizontal(
+                                        left: Radius.circular(50),
+                                        right: Radius.circular(50))),
+                                width: MediaQuery.of(context).size.width * 0.45,
+                                child: const ListTile(
+                                  leading: Icon(
+                                      color: Colors.white,
+                                      IconData(0xf659,
+                                          fontFamily: CupertinoIcons.iconFont,
+                                          fontPackage:
+                                              CupertinoIcons.iconFontPackage)),
+                                  title: Text(
+                                    'EMTS',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),
-                            Container(
-                              decoration: const BoxDecoration(
-                                  color: Colors.green,
-                                  borderRadius: BorderRadius.horizontal(
-                                      left: Radius.circular(30),
-                                      right: Radius.circular(30))),
-                              width: MediaQuery.of(context).size.width * 0.45,
-                              child: const ListTile(
-                                leading: Icon(
-                                  IconData(0xe159, fontFamily: 'MaterialIcons'),
-                                  color: Colors.white,
-                                ),
-                                title: Text(
-                                  'GMTS',
-                                  style: TextStyle(color: Colors.white),
+                            InkWell(
+                              onTap: () => {
+                                Navigator.of(context).pushNamed(
+                                    WiresDashboard.routeName,
+                                    arguments: {'rail': 'GMTS'})
+                              },
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.horizontal(
+                                        left: Radius.circular(30),
+                                        right: Radius.circular(30))),
+                                width: MediaQuery.of(context).size.width * 0.45,
+                                child: const ListTile(
+                                  leading: Icon(
+                                    IconData(0xe159,
+                                        fontFamily: 'MaterialIcons'),
+                                    color: Colors.white,
+                                  ),
+                                  title: Text(
+                                    'GMTS',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),
@@ -386,21 +443,29 @@ class _DashboardState extends State<Dashboard> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Container(
-                              decoration: const BoxDecoration(
-                                  color: Colors.green,
-                                  borderRadius: BorderRadius.horizontal(
-                                      left: Radius.circular(30),
-                                      right: Radius.circular(30))),
-                              width: MediaQuery.of(context).size.width * 0.45,
-                              child: const ListTile(
-                                leading: Icon(
-                                  IconData(0xe159, fontFamily: 'MaterialIcons'),
-                                  color: Colors.white,
-                                ),
-                                title: Text(
-                                  'EPE',
-                                  style: TextStyle(color: Colors.white),
+                            InkWell(
+                              onTap: () => {
+                                Navigator.of(context).pushNamed(
+                                    WiresDashboard.routeName,
+                                    arguments: {'rail': 'EPE'})
+                              },
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.horizontal(
+                                        left: Radius.circular(30),
+                                        right: Radius.circular(30))),
+                                width: MediaQuery.of(context).size.width * 0.45,
+                                child: const ListTile(
+                                  leading: Icon(
+                                    IconData(0xe159,
+                                        fontFamily: 'MaterialIcons'),
+                                    color: Colors.white,
+                                  ),
+                                  title: Text(
+                                    'EPE',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),
@@ -497,47 +562,6 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 title: const Text(
                   'Balance',
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-                children: <Widget>[
-                  Container(
-                    width: 400,
-                    height: 150,
-                    margin: const EdgeInsets.all(5),
-                    child: ListView(
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: const [],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.015,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: <Color>[
-                      Color.fromARGB(255, 78, 72, 72),
-                      Color.fromARGB(255, 47, 48, 46),
-                      // Color.fromARGB(235, 65, 65, 58),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
-              child: ExpansionTile(
-                leading: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.white,
-                ),
-                trailing: const SizedBox(),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                title: const Text(
-                  'Pending Transactions',
                   style: TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 children: <Widget>[

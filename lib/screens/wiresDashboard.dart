@@ -15,6 +15,16 @@ class WiresDashboard extends StatefulWidget {
 class _WiresDashboardState extends State<WiresDashboard> {
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+    bool isEMTS = false;
+    bool isGMTS = false;
+    bool isEPE = false;
+
+    if (arguments['rail'] == 'EMTS') isEMTS = true;
+    if (arguments['rail'] == 'GMTS') isGMTS = true;
+    if (arguments['rail'] == 'EPE') isEPE = true;
+
     var index = 2;
     int current = 0;
     List<Color> listColors = [
@@ -154,7 +164,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
                           ),
                           borderRadius: BorderRadius.circular(8)),
                       child: ExpansionTile(
-                        initiallyExpanded: true,
+                        initiallyExpanded: isEMTS,
                         trailing: const Icon(Icons.arrow_right),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(36),
@@ -400,7 +410,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
                           ),
                           borderRadius: BorderRadius.circular(8)),
                       child: ExpansionTile(
-                        initiallyExpanded: true,
+                        initiallyExpanded: isGMTS,
                         trailing: const Icon(Icons.arrow_right),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
@@ -638,7 +648,7 @@ class _WiresDashboardState extends State<WiresDashboard> {
                           ),
                           borderRadius: BorderRadius.circular(8)),
                       child: ExpansionTile(
-                        initiallyExpanded: true,
+                        initiallyExpanded: isEPE,
                         trailing: const Icon(Icons.arrow_right),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),

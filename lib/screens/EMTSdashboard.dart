@@ -825,7 +825,7 @@ class _EMTSDashboardState extends State<EMTSDashboard> {
                                   child: ListView.builder(
                                       physics:
                                           const NeverScrollableScrollPhysics(),
-                                      itemCount: 1,
+                                      itemCount: 3,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (ctx, index) {
                                         return Column(
