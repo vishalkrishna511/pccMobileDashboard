@@ -341,7 +341,42 @@ class _DashboardState extends State<Dashboard> {
                     margin: const EdgeInsets.all(5),
                     child: ListView(
                       physics: const NeverScrollableScrollPhysics(),
-                      children: const [],
+                      children: const [
+                        Card(
+                          color: Color.fromARGB(255, 47, 48, 46),
+                          child: ListTile(
+                            title: Text(
+                              'Wires E-CUR Rate',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              '5:00 AM ET',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            trailing: Text(
+                              '2 mins',
+                              style: TextStyle(color: Colors.red, fontSize: 26),
+                            ),
+                          ),
+                        ),
+                        Card(
+                          color: Color.fromARGB(255, 47, 48, 46),
+                          child: ListTile(
+                            title: Text(
+                              'Wires G-CUR Rate',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              '5:10 AM ET',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            trailing: Text(
+                              '12 mins',
+                              style: TextStyle(color: Colors.red, fontSize: 26),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -526,11 +561,89 @@ class _DashboardState extends State<Dashboard> {
                 children: <Widget>[
                   Container(
                     width: 400,
-                    height: 150,
+                    height: 130,
                     margin: const EdgeInsets.all(5),
                     child: ListView(
                       physics: const NeverScrollableScrollPhysics(),
-                      children: const [],
+                      children: [
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(7)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.45,
+                                  child: const Center(
+                                      child: Text(
+                                    'EST - 16:00',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ))),
+                              Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(7)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.45,
+                                  child: const Center(
+                                      child: Text(
+                                    'PST - 17:30',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ))),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.015,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(7)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.45,
+                                  child: const Center(
+                                      child: Text(
+                                    'CST - 15:15',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ))),
+                              Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(7)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.45,
+                                  child: const Center(
+                                      child: Text(
+                                    'MST - 18:30',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ))),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -561,7 +674,7 @@ class _DashboardState extends State<Dashboard> {
                   borderRadius: BorderRadius.circular(18),
                 ),
                 title: const Text(
-                  'Balance',
+                  'Product Balance',
                   style: TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 children: <Widget>[
@@ -570,8 +683,63 @@ class _DashboardState extends State<Dashboard> {
                     height: 150,
                     margin: const EdgeInsets.all(5),
                     child: ListView(
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: const [],
+                      // physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        Card(
+                            color: Color.fromARGB(255, 47, 48, 46),
+                            child: ListTile(
+                                title: Row(
+                              children: const <Widget>[
+                                Text(
+                                  'Wires',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                Spacer(),
+                                Text(
+                                  '+ 13,966,145,958',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                )
+                              ],
+                            ))),
+                        Card(
+                            color: Color.fromARGB(255, 47, 48, 46),
+                            child: ListTile(
+                                title: Row(
+                              children: const <Widget>[
+                                Text(
+                                  'ACH',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                Spacer(),
+                                Text(
+                                  '+ 2,834,161,450',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                )
+                              ],
+                            ))),
+                        Card(
+                            color: Color.fromARGB(255, 47, 48, 46),
+                            child: ListTile(
+                                title: Row(
+                              children: const <Widget>[
+                                Text(
+                                  'Checks',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                Spacer(),
+                                Text(
+                                  '+ 3,069,655,561',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                )
+                              ],
+                            ))),
+                      ],
                     ),
                   ),
                 ],
