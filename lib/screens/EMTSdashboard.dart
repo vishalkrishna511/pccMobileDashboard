@@ -76,7 +76,10 @@ class _EMTSDashboardState extends State<EMTSDashboard> {
                 ),
                 Tab(
                   text: 'Channels',
-                )
+                ),
+                // Tab(
+                //   text: 'Line of Business',
+                // )
               ]),
         ),
         body: TabBarView(
@@ -97,6 +100,22 @@ class _EMTSDashboardState extends State<EMTSDashboard> {
                 ),
               ),
               child: ChannelsScreen(),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: <Color>[
+                    Color.fromARGB(255, 30, 29, 29),
+                    Color.fromARGB(255, 47, 48, 46),
+                    Color.fromARGB(235, 65, 65, 58),
+                  ],
+                ),
+              ),
+              // child: ChannelsScreen(),
             ),
           ],
         ),

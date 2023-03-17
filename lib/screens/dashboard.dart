@@ -426,7 +426,7 @@ class _DashboardState extends State<Dashboard> {
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
-                                    color: Colors.red,
+                                    color: Color.fromARGB(255, 196, 42, 31),
                                     borderRadius: BorderRadius.horizontal(
                                         left: Radius.circular(50),
                                         right: Radius.circular(50))),
@@ -453,7 +453,7 @@ class _DashboardState extends State<Dashboard> {
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
-                                    color: Colors.green,
+                                    color: Color.fromARGB(255, 42, 106, 24),
                                     borderRadius: BorderRadius.horizontal(
                                         left: Radius.circular(30),
                                         right: Radius.circular(30))),
@@ -486,7 +486,7 @@ class _DashboardState extends State<Dashboard> {
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
-                                    color: Colors.green,
+                                    color: Color.fromARGB(255, 42, 106, 24),
                                     borderRadius: BorderRadius.horizontal(
                                         left: Radius.circular(30),
                                         right: Radius.circular(30))),
@@ -506,7 +506,7 @@ class _DashboardState extends State<Dashboard> {
                             ),
                             Container(
                               decoration: const BoxDecoration(
-                                  color: Colors.green,
+                                  color: Color.fromARGB(255, 42, 106, 24),
                                   borderRadius: BorderRadius.horizontal(
                                       left: Radius.circular(30),
                                       right: Radius.circular(30))),
@@ -574,7 +574,7 @@ class _DashboardState extends State<Dashboard> {
                                   padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 42, 106, 24),
-                                      borderRadius: BorderRadius.circular(7)),
+                                      borderRadius: BorderRadius.circular(25)),
                                   height:
                                       MediaQuery.of(context).size.height * 0.06,
                                   width:
@@ -589,7 +589,7 @@ class _DashboardState extends State<Dashboard> {
                                   padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 42, 106, 24),
-                                      borderRadius: BorderRadius.circular(7)),
+                                      borderRadius: BorderRadius.circular(25)),
                                   height:
                                       MediaQuery.of(context).size.height * 0.06,
                                   width:
@@ -614,7 +614,7 @@ class _DashboardState extends State<Dashboard> {
                                   padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 42, 106, 24),
-                                      borderRadius: BorderRadius.circular(7)),
+                                      borderRadius: BorderRadius.circular(25)),
                                   height:
                                       MediaQuery.of(context).size.height * 0.06,
                                   width:
@@ -629,7 +629,7 @@ class _DashboardState extends State<Dashboard> {
                                   padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 42, 106, 24),
-                                      borderRadius: BorderRadius.circular(7)),
+                                      borderRadius: BorderRadius.circular(25)),
                                   height:
                                       MediaQuery.of(context).size.height * 0.06,
                                   width:
@@ -680,7 +680,7 @@ class _DashboardState extends State<Dashboard> {
                 children: <Widget>[
                   Container(
                     width: 400,
-                    height: 150,
+                    height: 200,
                     margin: const EdgeInsets.all(5),
                     child: ListView(
                       // physics: const NeverScrollableScrollPhysics(),
