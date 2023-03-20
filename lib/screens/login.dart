@@ -63,7 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                       height: 30,
                     ),
                     TextFormField(
-                      controller: emailIdController,
+                      // controller: emailIdController,
+                      initialValue: "test@wf.com",
                       validator: (value) => EmailValidator.validate(value!)
                           ? null
                           : "Please enter a valid email",
@@ -79,7 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     TextFormField(
-                      controller: passwordController,
+                      // controller: passwordController,
+                      initialValue: "123456",
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your password';
@@ -99,8 +101,11 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(Dashboard.routeName);
+                      onPressed: () async {
+                        await Future.delayed(const Duration(milliseconds: 3000),
+                            () {
+                          Navigator.of(context).pushNamed(Dashboard.routeName);
+                        });
                         // FirebaseAuth.instance
                         //     .signInWithEmailAndPassword(
                         //         email: emailIdController.text,

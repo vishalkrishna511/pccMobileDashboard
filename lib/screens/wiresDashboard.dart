@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pccmobile/screens/EMTSdashboard.dart';
 import 'package:pccmobile/screens/dashboard.dart';
 import 'package:semicircle_indicator/semicircle_indicator.dart';
+import 'package:pccmobile/services/buildStream.dart';
 
 class WiresDashboard extends StatefulWidget {
   static const routeName = '/wires-dashboard';
@@ -13,10 +14,13 @@ class WiresDashboard extends StatefulWidget {
 }
 
 class _WiresDashboardState extends State<WiresDashboard> {
+  BuildStream b = BuildStream();
+
   @override
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ??
         <String, dynamic>{}) as Map;
+
     bool isEMTS = false;
     bool isGMTS = false;
     bool isEPE = false;
@@ -105,18 +109,45 @@ class _WiresDashboardState extends State<WiresDashboard> {
                           borderRadius: BorderRadius.circular(7)),
                       height: MediaQuery.of(context).size.height * 0.13,
                       width: MediaQuery.of(context).size.width * 0.45,
-                      child: const GridTile(
+                      child: GridTile(
                         header: Text(
                           'Transaction Amount',
                           style: TextStyle(fontSize: 15, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            '\$ 74.5 B',
-                            style: TextStyle(fontSize: 44, color: Colors.white),
-                          ),
+                        child: StreamBuilder<double>(
+                          initialData: 75.5,
+                          stream: b.generateTotalFedBalance,
+                          builder: (
+                            BuildContext context,
+                            AsyncSnapshot<double> snapshot,
+                          ) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return CircularProgressIndicator();
+                            } else if (snapshot.connectionState ==
+                                    ConnectionState.active ||
+                                snapshot.connectionState ==
+                                    ConnectionState.done) {
+                              if (snapshot.hasError) {
+                                return const Text('Error');
+                              } else if (snapshot.hasData) {
+                                return Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                      '\$ ' +
+                                          snapshot.data!.toStringAsFixed(2) +
+                                          ' B',
+                                      style: TextStyle(
+                                          fontSize: 36, color: Colors.white)),
+                                );
+                              } else {
+                                return const Text('Empty data');
+                              }
+                            } else {
+                              return Text('State: ${snapshot.connectionState}');
+                            }
+                          },
                         ),
                       ),
                     ),
@@ -127,18 +158,45 @@ class _WiresDashboardState extends State<WiresDashboard> {
                           borderRadius: BorderRadius.circular(7)),
                       height: MediaQuery.of(context).size.height * 0.13,
                       width: MediaQuery.of(context).size.width * 0.45,
-                      child: const GridTile(
+                      child: GridTile(
                         header: Text(
                           'Total Transactions',
                           style: TextStyle(fontSize: 15, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            '13,234',
-                            style: TextStyle(fontSize: 44, color: Colors.white),
-                          ),
+                        child: StreamBuilder<int>(
+                          stream: b.generateTransactions,
+                          builder: (
+                            BuildContext context,
+                            AsyncSnapshot<int> snapshot,
+                          ) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(),
+                              );
+                            } else if (snapshot.connectionState ==
+                                    ConnectionState.active ||
+                                snapshot.connectionState ==
+                                    ConnectionState.done) {
+                              if (snapshot.hasError) {
+                                return const Text('Error');
+                              } else if (snapshot.hasData) {
+                                return Align(
+                                  alignment: Alignment.center,
+                                  child: Text(snapshot.data.toString(),
+                                      style: TextStyle(
+                                          fontSize: 46, color: Colors.white)),
+                                );
+                              } else {
+                                return const Text('Empty data');
+                              }
+                            } else {
+                              return Text('State: ${snapshot.connectionState}');
+                            }
+                          },
                         ),
                       ),
                     ),

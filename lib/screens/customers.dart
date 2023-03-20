@@ -61,8 +61,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                 borderRadius: BorderRadius.circular(8)),
             child: ExpansionTile(
               initiallyExpanded: true,
-              leading: const Icon(Icons.arrow_drop_up),
-              trailing: const Spacer(),
+              // leading: const Icon(Icons.arrow_drop_up),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(36),
               ),
@@ -340,8 +339,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                   ),
                   borderRadius: BorderRadius.circular(8)),
               child: ExpansionTile(
-                leading: const Icon(Icons.arrow_drop_up),
-                trailing: const Spacer(),
+                // leading: const Icon(Icons.arrow_drop_up),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(36),
                 ),
