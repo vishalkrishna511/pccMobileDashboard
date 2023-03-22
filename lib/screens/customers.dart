@@ -210,6 +210,136 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                                   ],
                                                 ),
                                               ),
+                                              Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.2,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.9,
+                                                color: const Color.fromARGB(
+                                                    244, 33, 21, 21),
+                                                child: Column(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              15.0),
+                                                      child: Center(
+                                                        child: ToggleSwitch(
+                                                          fontSize: 16,
+                                                          cornerRadius: 20,
+                                                          animate: true,
+                                                          animationDuration:
+                                                              750,
+                                                          radiusStyle: true,
+                                                          minWidth: 100,
+                                                          minHeight: 30,
+                                                          activeBgColor: const [
+                                                            Colors.white,
+                                                          ],
+                                                          activeFgColor:
+                                                              Colors.black,
+                                                          inactiveBgColor:
+                                                              const Color
+                                                                      .fromARGB(
+                                                                  255,
+                                                                  192,
+                                                                  179,
+                                                                  179),
+                                                          totalSwitches: 2,
+                                                          labels: const [
+                                                            'Volume',
+                                                            'Value',
+                                                          ],
+                                                          onToggle: (index) {},
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              right: 8.0),
+                                                      child: Container(
+                                                        width: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .width *
+                                                            0.8,
+                                                        height: 200,
+                                                        child: const Doughnut(),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.2,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.9,
+                                                color: const Color.fromARGB(
+                                                    244, 33, 21, 21),
+                                                child: Column(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              15.0),
+                                                      child: Center(
+                                                        child: ToggleSwitch(
+                                                          fontSize: 16,
+                                                          cornerRadius: 20,
+                                                          animate: true,
+                                                          animationDuration:
+                                                              750,
+                                                          radiusStyle: true,
+                                                          minWidth: 100,
+                                                          minHeight: 30,
+                                                          activeBgColor: const [
+                                                            Colors.white,
+                                                          ],
+                                                          activeFgColor:
+                                                              Colors.black,
+                                                          inactiveBgColor:
+                                                              const Color
+                                                                      .fromARGB(
+                                                                  255,
+                                                                  192,
+                                                                  179,
+                                                                  179),
+                                                          totalSwitches: 2,
+                                                          labels: const [
+                                                            'Volume',
+                                                            'Value',
+                                                          ],
+                                                          onToggle: (index) {},
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              right: 8.0),
+                                                      child: Container(
+                                                        width: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .width *
+                                                            0.8,
+                                                        height: 200,
+                                                        child: const Doughnut(),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
                                             ]),
                                           ),
                                         ),
@@ -426,6 +556,142 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                                 ),
                                               ),
                                               body: TabBarView(children: [
+                                                Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.2,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.9,
+                                                  color: const Color.fromARGB(
+                                                      244, 33, 21, 21),
+                                                  child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15.0),
+                                                        child: Center(
+                                                          child: ToggleSwitch(
+                                                            fontSize: 16,
+                                                            cornerRadius: 20,
+                                                            animate: true,
+                                                            animationDuration:
+                                                                750,
+                                                            radiusStyle: true,
+                                                            minWidth: 100,
+                                                            minHeight: 30,
+                                                            activeBgColor: const [
+                                                              Colors.white,
+                                                            ],
+                                                            activeFgColor:
+                                                                Colors.black,
+                                                            inactiveBgColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    192,
+                                                                    179,
+                                                                    179),
+                                                            totalSwitches: 2,
+                                                            labels: const [
+                                                              'Volume',
+                                                              'Value',
+                                                            ],
+                                                            onToggle:
+                                                                (index) {},
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 8.0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                          height: 200,
+                                                          child:
+                                                              const Doughnut(),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.2,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.9,
+                                                  color: const Color.fromARGB(
+                                                      244, 33, 21, 21),
+                                                  child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15.0),
+                                                        child: Center(
+                                                          child: ToggleSwitch(
+                                                            fontSize: 16,
+                                                            cornerRadius: 20,
+                                                            animate: true,
+                                                            animationDuration:
+                                                                750,
+                                                            radiusStyle: true,
+                                                            minWidth: 100,
+                                                            minHeight: 30,
+                                                            activeBgColor: const [
+                                                              Colors.white,
+                                                            ],
+                                                            activeFgColor:
+                                                                Colors.black,
+                                                            inactiveBgColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    192,
+                                                                    179,
+                                                                    179),
+                                                            totalSwitches: 2,
+                                                            labels: const [
+                                                              'Volume',
+                                                              'Value',
+                                                            ],
+                                                            onToggle:
+                                                                (index) {},
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 8.0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                          height: 200,
+                                                          child:
+                                                              const Doughnut(),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
                                                 Container(
                                                   height: MediaQuery.of(context)
                                                           .size
@@ -779,6 +1045,142 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                                           child:
                                                               const Doughnut(),
                                                         ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.2,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.9,
+                                                  color: const Color.fromARGB(
+                                                      244, 33, 21, 21),
+                                                  child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15.0),
+                                                        child: Center(
+                                                          child: ToggleSwitch(
+                                                            fontSize: 16,
+                                                            cornerRadius: 20,
+                                                            animate: true,
+                                                            animationDuration:
+                                                                750,
+                                                            radiusStyle: true,
+                                                            minWidth: 100,
+                                                            minHeight: 30,
+                                                            activeBgColor: const [
+                                                              Colors.white,
+                                                            ],
+                                                            activeFgColor:
+                                                                Colors.black,
+                                                            inactiveBgColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    192,
+                                                                    179,
+                                                                    179),
+                                                            totalSwitches: 2,
+                                                            labels: const [
+                                                              'Volume',
+                                                              'Value',
+                                                            ],
+                                                            onToggle:
+                                                                (index) {},
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 8.0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                          height: 200,
+                                                          child:
+                                                              const Doughnut(),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.2,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.9,
+                                                  color: const Color.fromARGB(
+                                                      244, 33, 21, 21),
+                                                  child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15.0),
+                                                        child: Center(
+                                                          child: ToggleSwitch(
+                                                            fontSize: 16,
+                                                            cornerRadius: 20,
+                                                            animate: true,
+                                                            animationDuration:
+                                                                750,
+                                                            radiusStyle: true,
+                                                            minWidth: 100,
+                                                            minHeight: 30,
+                                                            activeBgColor: const [
+                                                              Colors.white,
+                                                            ],
+                                                            activeFgColor:
+                                                                Colors.black,
+                                                            inactiveBgColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    192,
+                                                                    179,
+                                                                    179),
+                                                            totalSwitches: 2,
+                                                            labels: const [
+                                                              'Volume',
+                                                              'Value',
+                                                            ],
+                                                            onToggle:
+                                                                (index) {},
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 8.0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                          height: 200,
+                                                          child:
+                                                              const Doughnut(),
+                                                        ),
                                                       )
                                                     ],
                                                   ),
@@ -1018,6 +1420,142 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                                 ),
                                               ),
                                               body: TabBarView(children: [
+                                                Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.2,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.9,
+                                                  color: const Color.fromARGB(
+                                                      244, 33, 21, 21),
+                                                  child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15.0),
+                                                        child: Center(
+                                                          child: ToggleSwitch(
+                                                            fontSize: 16,
+                                                            cornerRadius: 20,
+                                                            animate: true,
+                                                            animationDuration:
+                                                                750,
+                                                            radiusStyle: true,
+                                                            minWidth: 100,
+                                                            minHeight: 30,
+                                                            activeBgColor: const [
+                                                              Colors.white,
+                                                            ],
+                                                            activeFgColor:
+                                                                Colors.black,
+                                                            inactiveBgColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    192,
+                                                                    179,
+                                                                    179),
+                                                            totalSwitches: 2,
+                                                            labels: const [
+                                                              'Volume',
+                                                              'Value',
+                                                            ],
+                                                            onToggle:
+                                                                (index) {},
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 8.0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                          height: 200,
+                                                          child:
+                                                              const Doughnut(),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.2,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.9,
+                                                  color: const Color.fromARGB(
+                                                      244, 33, 21, 21),
+                                                  child: Column(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(15.0),
+                                                        child: Center(
+                                                          child: ToggleSwitch(
+                                                            fontSize: 16,
+                                                            cornerRadius: 20,
+                                                            animate: true,
+                                                            animationDuration:
+                                                                750,
+                                                            radiusStyle: true,
+                                                            minWidth: 100,
+                                                            minHeight: 30,
+                                                            activeBgColor: const [
+                                                              Colors.white,
+                                                            ],
+                                                            activeFgColor:
+                                                                Colors.black,
+                                                            inactiveBgColor:
+                                                                const Color
+                                                                        .fromARGB(
+                                                                    255,
+                                                                    192,
+                                                                    179,
+                                                                    179),
+                                                            totalSwitches: 2,
+                                                            labels: const [
+                                                              'Volume',
+                                                              'Value',
+                                                            ],
+                                                            onToggle:
+                                                                (index) {},
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                right: 8.0),
+                                                        child: Container(
+                                                          width: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .width *
+                                                              0.8,
+                                                          height: 200,
+                                                          child:
+                                                              const Doughnut(),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
                                                 Container(
                                                   height: MediaQuery.of(context)
                                                           .size

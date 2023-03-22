@@ -6,6 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pccmobile/screens/EMTSdashboard.dart';
 import 'package:pccmobile/screens/wiresDashboard.dart';
 import 'package:pccmobile/services/buildStream.dart';
+import 'package:intl/intl.dart';
+
+import '../services/notifications.dart';
 
 class Dashboard extends StatefulWidget {
   static const routeName = '/dashboard';
@@ -18,6 +21,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   BuildStream b = BuildStream();
   var index = 0;
+  final numberFormat = NumberFormat.currency(locale: 'en_US', symbol: '\$ ');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,7 +101,7 @@ class _DashboardState extends State<Dashboard> {
                                   horizontal: 5, vertical: 1),
                               // width: MediaQuery.of(context).size.width * 0.15,
                               decoration: BoxDecoration(
-                                  color: Colors.green,
+                                  color: Color.fromARGB(255, 42, 106, 24),
                                   borderRadius: BorderRadius.circular(10)),
                               child: Row(
                                 children: const <Widget>[
@@ -180,7 +184,7 @@ class _DashboardState extends State<Dashboard> {
                                   horizontal: 5, vertical: 1),
                               // width: MediaQuery.of(context).size.width * 0.15,
                               decoration: BoxDecoration(
-                                  color: Colors.green,
+                                  color: Color.fromARGB(255, 42, 106, 24),
                                   borderRadius: BorderRadius.circular(10)),
                               child: Row(
                                 children: const <Widget>[
@@ -245,7 +249,129 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.015),
+                // SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+                Row(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.921,
+                      height: MediaQuery.of(context).size.height * 0.04,
+                      // color: Colors.amber,
+                      margin: const EdgeInsets.symmetric(vertical: 5),
+                      child: ListView(
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.04,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'EST - ',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                      Text(
+                                        '16:00',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.04,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'PST - ',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                      Text(
+                                        '17:30',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.04,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'MST - ',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                      Text(
+                                        '18:30',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 42, 106, 24),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.04,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'CST - ',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                      Text(
+                                        '15:15',
+                                        style: TextStyle(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -257,45 +383,45 @@ class _DashboardState extends State<Dashboard> {
                       height: MediaQuery.of(context).size.height * 0.13,
                       width: MediaQuery.of(context).size.width * 0.45,
                       child: GridTile(
-                          header: Text(
-                            'Current Fed Balance',
-                            style: TextStyle(fontSize: 15, color: Colors.white),
-                            textAlign: TextAlign.center,
-                          ),
-                          child: StreamBuilder<double>(
-                            stream: b.generateTotalFedBalance,
-                            builder: (
-                              BuildContext context,
-                              AsyncSnapshot<double> snapshot,
-                            ) {
-                              if (snapshot.connectionState ==
-                                  ConnectionState.waiting) {
-                                return CircularProgressIndicator();
-                              } else if (snapshot.connectionState ==
-                                      ConnectionState.active ||
-                                  snapshot.connectionState ==
-                                      ConnectionState.done) {
-                                if (snapshot.hasError) {
-                                  return const Text('Error');
-                                } else if (snapshot.hasData) {
-                                  return Align(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                        '\$ ' +
-                                            snapshot.data!.toStringAsFixed(2) +
-                                            ' B',
-                                        style: TextStyle(
-                                            fontSize: 36, color: Colors.white)),
-                                  );
-                                } else {
-                                  return const Text('Empty data');
-                                }
+                        header: Text(
+                          'Current Fed Balance',
+                          style: TextStyle(fontSize: 15, color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                        child: StreamBuilder<double>(
+                          stream: b.generateTotalFedBalance,
+                          builder: (
+                            BuildContext context,
+                            AsyncSnapshot<double> snapshot,
+                          ) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return CircularProgressIndicator();
+                            } else if (snapshot.connectionState ==
+                                    ConnectionState.active ||
+                                snapshot.connectionState ==
+                                    ConnectionState.done) {
+                              if (snapshot.hasError) {
+                                return const Text('Error');
+                              } else if (snapshot.hasData) {
+                                return Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                      '\$ ' +
+                                          snapshot.data!.toStringAsFixed(2) +
+                                          ' B',
+                                      style: TextStyle(
+                                          fontSize: 36, color: Colors.white)),
+                                );
                               } else {
-                                return Text(
-                                    'State: ${snapshot.connectionState}');
+                                return const Text('Empty data');
                               }
-                            },
-                          )),
+                            } else {
+                              return Text('State: ${snapshot.connectionState}');
+                            }
+                          },
+                        ),
+                      ),
                     ),
                     Container(
                       padding: const EdgeInsets.all(5),
@@ -475,6 +601,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(8))),
                   child: ExpansionTile(
+                    initiallyExpanded: true,
                     leading: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.white,
@@ -553,6 +680,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(8))),
                   child: ExpansionTile(
+                    initiallyExpanded: true,
                     leading: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.white,
@@ -708,140 +836,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(8))),
                   child: ExpansionTile(
-                    leading: const Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.white,
-                    ),
-                    trailing: const SizedBox(),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                    title: const Text(
-                      'Time Information',
-                      style: TextStyle(fontSize: 22, color: Colors.white),
-                    ),
-                    children: <Widget>[
-                      Container(
-                        width: 400,
-                        height: 130,
-                        margin: const EdgeInsets.all(5),
-                        child: ListView(
-                          physics: const NeverScrollableScrollPhysics(),
-                          children: [
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Container(
-                                      padding: const EdgeInsets.all(5),
-                                      decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 42, 106, 24),
-                                          borderRadius:
-                                              BorderRadius.circular(25)),
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.06,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.45,
-                                      child: const Center(
-                                          child: Text(
-                                        'EST - 16:00',
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                      ))),
-                                  Container(
-                                      padding: const EdgeInsets.all(5),
-                                      decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 42, 106, 24),
-                                          borderRadius:
-                                              BorderRadius.circular(25)),
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.06,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.45,
-                                      child: const Center(
-                                          child: Text(
-                                        'PST - 17:30',
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                      ))),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.015,
-                            ),
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Container(
-                                      padding: const EdgeInsets.all(5),
-                                      decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 42, 106, 24),
-                                          borderRadius:
-                                              BorderRadius.circular(25)),
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.06,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.45,
-                                      child: const Center(
-                                          child: Text(
-                                        'CST - 15:15',
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                      ))),
-                                  Container(
-                                      padding: const EdgeInsets.all(5),
-                                      decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 42, 106, 24),
-                                          borderRadius:
-                                              BorderRadius.circular(25)),
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.06,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.45,
-                                      child: const Center(
-                                          child: Text(
-                                        'MST - 18:30',
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                      ))),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.015,
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: <Color>[
-                          Color.fromARGB(255, 78, 72, 72),
-                          Color.fromARGB(255, 47, 48, 46),
-                          // Color.fromARGB(235, 65, 65, 58),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(8))),
-                  child: ExpansionTile(
+                    initiallyExpanded: true,
                     leading: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.white,
@@ -866,54 +861,150 @@ class _DashboardState extends State<Dashboard> {
                                 color: Color.fromARGB(255, 47, 48, 46),
                                 child: ListTile(
                                     title: Row(
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     Text(
                                       'Wires',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 20),
                                     ),
                                     Spacer(),
-                                    Text(
-                                      '+ 13,966,145,958',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
-                                    )
+                                    StreamBuilder<num>(
+                                      stream: b.generateWire,
+                                      builder: (
+                                        BuildContext context,
+                                        AsyncSnapshot<num> snapshot,
+                                      ) {
+                                        if (snapshot.connectionState ==
+                                            ConnectionState.waiting) {
+                                          return CircularProgressIndicator();
+                                        } else if (snapshot.connectionState ==
+                                                ConnectionState.active ||
+                                            snapshot.connectionState ==
+                                                ConnectionState.done) {
+                                          if (snapshot.hasError) {
+                                            return const Text('Error');
+                                          } else if (snapshot.hasData) {
+                                            return Align(
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                '+ ' +
+                                                    numberFormat
+                                                        .format(snapshot.data!)
+                                                        .toString(),
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 20),
+                                              ),
+                                            );
+                                          } else {
+                                            return const Text('Empty data');
+                                          }
+                                        } else {
+                                          return Text(
+                                              'State: ${snapshot.connectionState}');
+                                        }
+                                      },
+                                    ),
                                   ],
                                 ))),
                             Card(
                                 color: Color.fromARGB(255, 47, 48, 46),
                                 child: ListTile(
                                     title: Row(
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     Text(
                                       'ACH',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 20),
                                     ),
                                     Spacer(),
-                                    Text(
-                                      '+ 2,834,161,450',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
-                                    )
+                                    StreamBuilder<num>(
+                                      stream: b.generateACH,
+                                      builder: (
+                                        BuildContext context,
+                                        AsyncSnapshot<num> snapshot,
+                                      ) {
+                                        if (snapshot.connectionState ==
+                                            ConnectionState.waiting) {
+                                          return CircularProgressIndicator();
+                                        } else if (snapshot.connectionState ==
+                                                ConnectionState.active ||
+                                            snapshot.connectionState ==
+                                                ConnectionState.done) {
+                                          if (snapshot.hasError) {
+                                            return const Text('Error');
+                                          } else if (snapshot.hasData) {
+                                            return Align(
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                '+ ' +
+                                                    numberFormat
+                                                        .format(snapshot.data!)
+                                                        .toString(),
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 20),
+                                              ),
+                                            );
+                                          } else {
+                                            return const Text('Empty data');
+                                          }
+                                        } else {
+                                          return Text(
+                                              'State: ${snapshot.connectionState}');
+                                        }
+                                      },
+                                    ),
                                   ],
                                 ))),
                             Card(
                                 color: Color.fromARGB(255, 47, 48, 46),
                                 child: ListTile(
                                     title: Row(
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     Text(
                                       'Checks',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 20),
                                     ),
                                     Spacer(),
-                                    Text(
-                                      '+ 3,069,655,561',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
-                                    )
+                                    StreamBuilder<num>(
+                                      stream: b.generateCheck,
+                                      builder: (
+                                        BuildContext context,
+                                        AsyncSnapshot<num> snapshot,
+                                      ) {
+                                        if (snapshot.connectionState ==
+                                            ConnectionState.waiting) {
+                                          return CircularProgressIndicator();
+                                        } else if (snapshot.connectionState ==
+                                                ConnectionState.active ||
+                                            snapshot.connectionState ==
+                                                ConnectionState.done) {
+                                          if (snapshot.hasError) {
+                                            return const Text('Error');
+                                          } else if (snapshot.hasData) {
+                                            return Align(
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                '+ ' +
+                                                    numberFormat
+                                                        .format(snapshot.data!)
+                                                        .toString(),
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 20),
+                                              ),
+                                            );
+                                          } else {
+                                            return const Text('Empty data');
+                                          }
+                                        } else {
+                                          return Text(
+                                              'State: ${snapshot.connectionState}');
+                                        }
+                                      },
+                                    ),
                                   ],
                                 ))),
                           ],
@@ -938,12 +1029,20 @@ class _DashboardState extends State<Dashboard> {
         currentIndex: index,
         onTap: (int index) {
           switch (index) {
+            case 1:
+              NotificationService().showNotification(
+                  title: 'ALERT!!!!', body: 'Required Action immediately!!!');
+              break;
             case 2:
               Navigator.of(context).pushNamed(WiresDashboard.routeName);
               break;
           }
         },
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        NotificationService().showNotification(
+            title: 'ALERT!!!!', body: 'Required Action immediately!!!');
+      }),
     );
   }
 }
