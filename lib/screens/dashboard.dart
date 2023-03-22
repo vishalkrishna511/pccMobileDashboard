@@ -8,8 +8,6 @@ import 'package:pccmobile/screens/wiresDashboard.dart';
 import 'package:pccmobile/services/buildStream.dart';
 import 'package:intl/intl.dart';
 
-import '../services/notifications.dart';
-
 class Dashboard extends StatefulWidget {
   static const routeName = '/dashboard';
   const Dashboard({super.key});
@@ -1029,20 +1027,12 @@ class _DashboardState extends State<Dashboard> {
         currentIndex: index,
         onTap: (int index) {
           switch (index) {
-            case 1:
-              NotificationService().showNotification(
-                  title: 'ALERT!!!!', body: 'Required Action immediately!!!');
-              break;
             case 2:
               Navigator.of(context).pushNamed(WiresDashboard.routeName);
               break;
           }
         },
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        NotificationService().showNotification(
-            title: 'ALERT!!!!', body: 'Required Action immediately!!!');
-      }),
     );
   }
 }
